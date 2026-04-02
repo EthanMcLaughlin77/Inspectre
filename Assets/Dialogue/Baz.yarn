@@ -1,0 +1,43 @@
+title: Baz_First
+---
+Baz: Hey, kid!
+<<once>>
+Baz: Sorry to hear about your pop, he was a swell guy.
+<<endonce>>
+Baz: What do you need?
+<<jump Baz_NeedSomething>>
+===
+
+title: Baz_NeedSomething
+---
+->I need to find out what happened. <<once>>
+  <<jump Baz_WhatHappened>>
+->What can you tell me? <<once>>
+  <<jump Baz_RichterOpinions>>
+->Goodbye.
+  Saul: See you later.
+  Baz: Alright, kid.
+===
+
+title: Baz_WhatHappened
+---
+Saul: I need to find out what happened to my father.
+Baz: I respect that, kid. You got grit.
+Baz: I can definitely tell you're your dad's boy.
+Baz: Well if you need me for anything at all, you know where to find me, kid.
+<<jump Baz_NeedSomething>>
+===
+title: Baz_RichterOpinions
+---
+Saul: What can you tell me about my father?
+Baz: Oh, yeah, sure.
+Baz: He was a great guy, super good boss, yeah.
+Baz: Like he knew how to get stuff done, but he was lax, y'know?
+Baz: He definitely had a different way of going about things compared to other businessmen I've worked with.
+Baz: I know that Sia actually hated how he went about things, you should ask her about that.
+<<set $Sia_Clue = $Sia_Clue + 1>>
+Sia clue added.
+Saul: Thanks, I'll go talk to her.
+Baz: Something else on your mind?
+<<jump Baz_NeedSomething>>
+===

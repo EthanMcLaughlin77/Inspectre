@@ -1,0 +1,50 @@
+title: Sia_First
+---
+Sia: Heya!
+<<once>>
+Sia: I can't believe what just happened.
+Sia: I mean are any of us really safe?
+Saul: That's what I'm here for. I want to find out who did this.
+Sia: That's relieving to hear.
+Sia: Anyways...
+<<endonce>>
+Sia: You need something?
+<<jump Sia_NeedSomething>>
+===
+
+title: Sia_NeedSomething
+---
+->What did you think of my father? <<once>>
+  Saul: What did you think of my father?
+  Sia: He was a great man, I really liked him.
+  Sia: We were actually quite close, believe it or not.
+  Saul: I'll choose not to believe it.
+  Sia: Suit yourself!
+  Sia: But if you need anything at all, you let me know, k? <3
+  <<set $Sia_Clue = $Sia_Clue + 1>>
+  <<jump Sia_NeedSomething>>
+->You seem happy. <<once>>
+  Saul: You seem pretty happy, considering the circumstances.
+  Sia: Yeahhh well it's good to have a good mental attitude I suppose!
+  Sia: It could be that I'm just in shock over what happened.
+  Sia: But it's always good to look on the bright side!
+  Saul: And what would that be?
+  Sia: ...
+  Sia: I'll get back to you on that!
+  Sia: You need anything else?
+  <<jump Sia_NeedSomething>>
+->Baz told me something. <<if $Sia_Clue == 2>>
+  Saul: Baz told me something, actually.
+  Sia: Oh yeah? What would that be?
+  Saul: He told me that you weren't really a fan of how my father managed the business, is that true?
+  Sia: I mean...
+  Sia: He was definitely strict, but that wasn't a *bad* thing, really.
+  Sia: I didn't hate him for it though, absolutely not.
+  Saul: Right, gotcha.
+  <<set $Sia_Clue = $Sia_Clue + 1>>
+  Sia: You need anything else?
+  <<jump Sia_NeedSomething>>
+->Just saying hello.
+  Saul: See you later.
+  Sia: Ok! See you!
+===
