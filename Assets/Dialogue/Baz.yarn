@@ -36,7 +36,7 @@ Baz: Like he knew how to get stuff done, but he was lax, y'know?
 Baz: He definitely had a different way of going about things compared to other businessmen I've worked with.
 Baz: I know that Sia actually hated how he went about things, you should ask her about that.
 <<set $Sia_Clue = $Sia_Clue + 1>>
-Sia clue added.
+<color="yellow">Sia clue added.
 Saul: Thanks, I'll go talk to her.
 Baz: Something else on your mind?
 <<jump Baz_NeedSomething>>

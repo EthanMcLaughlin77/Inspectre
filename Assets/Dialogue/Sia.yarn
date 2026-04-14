@@ -33,7 +33,7 @@ title: Sia_NeedSomething
   Sia: I'll get back to you on that!
   Sia: You need anything else?
   <<jump Sia_NeedSomething>>
-->Baz told me something. <<if $Sia_Clue == 2>>
+-><color="yellow">Baz told me something. <<if $Sia_Clue == 2>>
   Saul: Baz told me something, actually.
   Sia: Oh yeah? What would that be?
   Saul: He told me that you weren't really a fan of how my father managed the business, is that true?

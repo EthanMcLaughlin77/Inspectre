@@ -1,0 +1,22 @@
+title: Door_First
+---
+<<if $Door_counter == 4>>
+  <<jump Door_Crashout>>
+  <<endif>>
+<<if $Door_counter == 5>>
+  <<jump Door_Final>>
+  <<endif>>
+Saul: I don't need to go this way.
+<<set $Door_counter = $Door_counter + 1>>
+===
+
+title: Door_Crashout
+---
+Saul: Stop interacting with the fucking door.
+<<set $Door_counter = $Door_counter + 1>>
+===
+
+title: Door_Final
+---
+Saul: ...
+===

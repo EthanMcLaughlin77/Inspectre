@@ -1,3 +1,4 @@
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -76,6 +77,24 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Debug.Log($"Player movement disabled for dialogue");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Wall"))
+        {
+            Debug.Log($"Interacted with wall, movement disabled.");
+            speed = 0.1f;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Wall"))
+        {
+            Debug.Log($"Movement reenabled.");
+            speed = 4f;
+        }
     }
 
     public void EnablePlayerMovement()
