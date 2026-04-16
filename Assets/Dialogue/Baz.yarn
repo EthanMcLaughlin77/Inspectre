@@ -14,6 +14,21 @@ title: Baz_NeedSomething
   <<jump Baz_WhatHappened>>
 ->What can you tell me? <<once>>
   <<jump Baz_RichterOpinions>>
+-><color="yellow">Lied about Sia. <<if $Baz_clue == 1>>
+  Saul: I talked to Sia about what you said.
+  Baz: Yeah? What did she say?
+  Saul: She said you lied about her hating my father.
+  Baz: Well how are you supposed to know?
+  Saul: Know what?
+  Baz: How are you supposed to know which of us is lying?
+  Baz: There's no proof of anything at all here, is there, kid?
+  Saul: (He might have a point, I don't have any leads...)
+  Richter: Don't give up, Saul! We can solve this mystery!
+  Saul: You're right, Dad.
+  Baz: You say something?
+  Saul: Huh? No, nothing.
+  Saul: I'll be back.
+  <<jump Baz_Confront>>
 ->Goodbye.
   Saul: See you later.
   Baz: Alright, kid.
@@ -40,4 +55,10 @@ Baz: I know that Sia actually hated how he went about things, you should ask her
 Saul: Thanks, I'll go talk to her.
 Baz: Something else on your mind?
 <<jump Baz_NeedSomething>>
+===
+
+title: Baz_Confront
+---
+<<set $Baz_clue = $Baz_clue + 1>>
+<<set $Weapon_search = $Weapon_search + 1>>
 ===

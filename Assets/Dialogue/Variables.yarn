@@ -4,4 +4,5 @@ title: Variables
 <<declare $Sia_clue = 0 as number>>
 <<declare $Baz_clue = 0 as number>>
 <<declare $Door_counter = 0 as number>>
+<<declare $Weapon_search = 0 as number>>
 ===
