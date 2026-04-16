@@ -30,10 +30,9 @@ title: Richter_Investigation
   Saul: I'm not sure where to go from here...
   Richter: Hmm...
   Richter: <color="yellow">I think you should try talking to the guests to see what info you can gather from them. <<if $Clue_total == 0>>
-  Richter: I bet you should talk to Sia. <<if $Sia_clue == 1>>
-  Richter: I bet you should talk to Sia. <<if $Sia_clue == 2>>
-  Richter: Baz already gave you some information on her, try to find out what you can. <<if $Sia_clue == 2>>
-  Richter: Sia said that Baz lied about me hating her, maybe you should see what that's about. <<if $Baz_clue == 1>>
+  Richter: <color="yellow">I bet you should talk to Sia. <<if $Sia_clue == 2>>
+  Richter: <color="yellow">Baz already gave you some information on her, try to find out what you can. <<if $Sia_clue == 2>>
+  Richter: <color="yellow">Sia said that Baz lied about me hating her, maybe you should see what that's about. <<if $Baz_clue == 1>>
   Saul: Alright, thanks.
   <<jump Richter_Investigation>>
 ->Just saying hello.

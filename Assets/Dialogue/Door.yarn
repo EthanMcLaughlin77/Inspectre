@@ -1,44 +1,27 @@
 title: Door_First
 ---
-<<if $Door_counter == 4>>
+<<if $Door_counter == 1>>
+  <<jump Door_Second>>
+  <<endif>>
+<<if $Door_counter == 3>>
   <<jump Door_Crashout>>
   <<endif>>
-<<if $Door_counter == 5>>
-  <<jump Door_Fyou>>
-  <<endif>>
-<<if $Door_counter == 6>>
+<<if $Door_counter == 4>>
   <<jump Door_Final>>
   <<endif>>
 Saul: I don't need to go this way.
 <<set $Door_counter = $Door_counter + 1>>
 ===
 
-title: Door_Crashout
+title: Door_Second
 ---
-Saul: Hey can you just stop interacting with the door please.
-Saul: It's really annoying.
-Saul: You could always just play the game instead.
-Saul: Like.
-Saul: There's a whole game right here for you to try and you're just...
-Saul: ...interacting with a door...
-Saul: ...over and over...
-Saul: So please just stop?
-Saul: You're driving me crazy.
-Saul: Seriously.
-Saul: A door.
-Saul: There was literally no reason for you to try this.
-Saul: You had to interact five times for this to happen.
-Saul: Five.
-Saul: Times.
-Saul: ...
-Saul: The nerve of some people...
-Saul: Just play the game already.
+Saul: I have stuff to do.
 <<set $Door_counter = $Door_counter + 1>>
 ===
 
-title: Door_Fyou
+title: Door_Crashout
 ---
-Saul: Fuck you.
+Saul: Hey can you stop interacting with the fucking door.
 <<set $Door_counter = $Door_counter + 1>>
 ===
 
