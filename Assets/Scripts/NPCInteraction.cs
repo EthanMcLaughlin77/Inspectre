@@ -14,8 +14,15 @@ public class NPCInteraction : MonoBehaviour
     private PlayerInput playerInput;
     public PlayerMovement playerMovement;
 
+    [SerializeField] private GameObject interactionIndicator;
+
     private void Start()
     {
+        if (interactionIndicator != null)
+        {
+            interactionIndicator.SetActive(false);
+        }
+
         if (dialogueRunner == null)
         {
             dialogueRunner = FindFirstObjectByType<DialogueRunner>();
@@ -67,6 +74,12 @@ public class NPCInteraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
+
+            //Get rid of this bit if it doesn't work
+            if (!dialogueRunner.IsDialogueRunning && interactionIndicator != null)
+            {
+                interactionIndicator.SetActive(true);
+            }
         }
 
         /*if (playerInput != null)
@@ -82,6 +95,12 @@ public class NPCInteraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
+
+            //Get rid of this bit if it doesn't work
+            if (interactionIndicator != null)
+            {
+                interactionIndicator.SetActive(false);
+            }
         }
 
         Debug.Log($"Player left range");
@@ -92,6 +111,12 @@ public class NPCInteraction : MonoBehaviour
 
         isCurrentlyTalking = true;
         Debug.Log($"Now is talking");
+
+        //Get rid of this bit below if it doesn't work
+        if (interactionIndicator != null)
+        {
+            interactionIndicator.SetActive(false);
+        }
 
         dialogueRunner.StartDialogue(dialogueNode);
 
@@ -104,6 +129,12 @@ public class NPCInteraction : MonoBehaviour
     {
         Debug.Log($"Dialogue Complete");
         isCurrentlyTalking = false;
+
+        //Get rid of this bit below if it doesn't work
+        if (playerInRange && interactionIndicator != null)
+        {
+            interactionIndicator.SetActive(true);
+        }
 
         playerMovement.EnablePlayerMovement();
     }

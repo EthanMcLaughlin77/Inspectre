@@ -29,7 +29,7 @@ title: Richter_Investigation
 ->What do I do? (Hint)
   Saul: I'm not sure where to go from here...
   Richter: Hmm...
-  Richter: I think you should try talking to the guests to see what info you can gather from them. <<if $Clue_total == 0>>
+  Richter: <color="yellow">I think you should try talking to the guests to see what info you can gather from them. <<if $Clue_total == 0>>
   Richter: I bet you should talk to Sia. <<if $Sia_clue == 1>>
   Richter: I bet you should talk to Sia. <<if $Sia_clue == 2>>
   Richter: Baz already gave you some information on her, try to find out what you can. <<if $Sia_clue == 2>>
