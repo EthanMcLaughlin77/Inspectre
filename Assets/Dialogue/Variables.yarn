@@ -1,5 +1,7 @@
 title: Variables
 ---
+<<delcare $Clue_total = 0 as number>>
 <<declare $Sia_clue = 0 as number>>
 <<declare $Baz_clue = 0 as number>>
+<<declare $Door_counter = 0 as number>>
 ===

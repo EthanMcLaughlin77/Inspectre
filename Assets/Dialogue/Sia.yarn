@@ -21,7 +21,8 @@ title: Sia_NeedSomething
   Saul: I'll choose not to believe it.
   Sia: Suit yourself!
   Sia: But if you need anything at all, you let me know, k? <3
-  <<set $Sia_Clue = $Sia_Clue + 1>>
+  <<set $Sia_clue = $Sia_clue + 1>>
+  <<set $Clue_total = $Clue_total + 1>>
   <<jump Sia_NeedSomething>>
 ->You seem happy. <<once>>
   Saul: You seem pretty happy, considering the circumstances.
@@ -33,7 +34,7 @@ title: Sia_NeedSomething
   Sia: I'll get back to you on that!
   Sia: You need anything else?
   <<jump Sia_NeedSomething>>
--><color="yellow">Baz told me something. <<if $Sia_Clue == 2>>
+-><color="yellow">Baz told me something. <<if $Sia_clue == 2>>
   Saul: Baz told me something, actually.
   Sia: Oh yeah? What would that be?
   Saul: He told me that you weren't really a fan of how my father managed the business, is that true?
@@ -41,7 +42,11 @@ title: Sia_NeedSomething
   Sia: He was definitely strict, but that wasn't a *bad* thing, really.
   Sia: I didn't hate him for it though, absolutely not.
   Saul: Right, gotcha.
-  <<set $Sia_Clue = $Sia_Clue + 1>>
+  Saul: (Now what would Baz lie for...)
+  <<set $Sia_clue = $Sia_clue + 1>>
+  <<set $Baz_clue = $Baz_clue + 1>>
+  <color="yellow">Baz clue added.
+  <<set $Clue_total = $Clue_total + 1>>
   Sia: You need anything else?
   <<jump Sia_NeedSomething>>
 ->Just saying hello.

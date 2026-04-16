@@ -1,0 +1,43 @@
+title: Richter_First
+---
+<<once>>
+Richter: I wonder how it is that only you can see me...
+Saul: Yes, it's strange. Just another thing to figure out, I guess.
+Richter: Indeed. But speaking of...
+<<endonce>>
+Richter: How's the investigation going?
+<<jump Richter_Investigation>>
+===
+
+title: Richter_Investigation
+---
+->How are you holding up? <<once>>
+  Saul: How are you holding up? With being dead and all.
+  Richter: Believe it or not, I'm in high *spirits*!
+  Saul: That's not funny, Dad.
+  Richter: Can't help it.
+  Richter: It's a really strange sensation, though.
+  Richter: The oddest thing is I seem to have lost all memory of the murder itself...
+  Saul: That's inconvenient.
+  Richter: But think of it this way.
+  Richter: If I could straight up tell you who the culprit was, the game wouldn't be very fun, would it?
+  Saul: Game?
+  Richter: Who said that?
+  Saul: ...
+  Richter: Don't you have some investigating to do?
+  <<jump Richter_Investigation>>
+->What do I do? (Hint)
+  Saul: I'm not sure where to go from here...
+  Richter: Hmm...
+  Richter: I think you should try talking to the guests to see what info you can gather from them. <<if $Clue_total == 0>>
+  Richter: I bet you should talk to Sia. <<if $Sia_clue == 1>>
+  Richter: I bet you should talk to Sia. <<if $Sia_clue == 2>>
+  Richter: Baz already gave you some information on her, try to find out what you can. <<if $Sia_clue == 2>>
+  Richter: Sia said that Baz lied about me hating her, maybe you should see what that's about. <<if $Baz_clue == 1>>
+  Saul: Alright, thanks.
+  <<jump Richter_Investigation>>
+->Just saying hello.
+  Saul: This mystery won't solve itself.
+  Richter: Good luck!
+  Saul: Thanks, Dad.
+===
