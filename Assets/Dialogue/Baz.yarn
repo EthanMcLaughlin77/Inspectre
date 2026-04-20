@@ -1,50 +1,52 @@
 title: Baz_First
 ---
-Baz: Hey, kid!
 <<once>>
+Baz: Hey, kid!
 Baz: Sorry to hear about your pop, he was a swell guy.
 <<endonce>>
+<<if $Weapon_search == 0>>
 Baz: What do you need?
+<<jump Baz_NeedSomething>>
+<<endif>>
+Baz: ...
+Baz: What do you want?
 <<jump Baz_NeedSomething>>
 ===
 
 title: Baz_NeedSomething
 ---
+<<if $Weapon_search == 2>>
+<<jump Baz_Accusation>>
+<<endif>>
 ->I need to find out what happened. <<once>>
   <<jump Baz_WhatHappened>>
 ->What can you tell me? <<once>>
   <<jump Baz_RichterOpinions>>
--><color="yellow">Lied about Sia. <<if $Baz_clue == 1>>
-  Saul: I talked to Sia about what you said.
-  Baz: Yeah? What did she say?
-  Saul: She said you lied about her hating my father.
-  Baz: Well how are you supposed to know?
-  Saul: Know what?
-  Baz: How are you supposed to know which of us is lying?
-  Baz: There's no proof of anything at all here, is there, kid?
-  Saul: (He might have a point, I don't have any leads...)
-  Richter: Don't give up, Saul! We can solve this mystery!
-  Saul: You're right, Dad.
-  Baz: You say something?
-  Saul: Huh? No, nothing.
-  Saul: I'll be back.
+-><color="yellow">You lied about Sia. <<if $Baz_clue == 1>>
   <<jump Baz_Confront>>
 ->Goodbye.
   Saul: See you later.
-  Baz: Alright, kid.
+  Baz: Alright, kid. <<if $Weapon_search == 0>>
+  Baz: ... <<if $Weapon_search >= 1>>
 ===
 
 title: Baz_WhatHappened
 ---
+<<if $Weapon_search == 0>>
 Saul: I need to find out what happened to my father.
 Baz: I respect that, kid. You got grit.
 Baz: I can definitely tell you're your dad's boy.
 Baz: Well if you need me for anything at all, you know where to find me, kid.
+<<endif>>
+<<if $Weapon_search >= 1>>
+Saul: ...
+Baz: ...
+<<endif>>
 <<jump Baz_NeedSomething>>
 ===
 title: Baz_RichterOpinions
 ---
-Saul: What can you tell me about my father?
+Saul: What did you think of my father?
 Baz: Oh, yeah, sure.
 Baz: He was a great guy, super good boss, yeah.
 Baz: Like he knew how to get stuff done, but he was lax, y'know?
@@ -59,6 +61,73 @@ Baz: Something else on your mind?
 
 title: Baz_Confront
 ---
+Saul: I talked to Sia about what you said.
+Baz: Yeah? What did she say?
+Saul: She said you lied about her hating my father.
+Baz: Well how are you supposed to know?
+Saul: Know what?
+Baz: How are you supposed to know which of us is lying?
+Baz: There's no proof of anything at all here, is there, kid?
+Saul: (He might have a point, I don't have any leads...)
+Richter: Don't give up, Saul! We can solve this mystery!
+Saul: You're right, Dad.
+Baz: You say something?
+Saul: Huh? No, nothing.
+Saul: I'll be back.
 <<set $Baz_clue = $Baz_clue + 1>>
+<color="yellow">Baz clue added.
 <<set $Weapon_search = $Weapon_search + 1>>
+===
+
+title: Baz_Accusation
+---
+-><color="red">You're the killer!
+  Saul: Baz Zooka! I believe you killed my father!
+  Baz: That's some accusation, kid. What are you basing this off?
+  Richter: This is it, Saul. Present your information as best you can!
+  <<jump Baz_Questioning>>
+===
+
+title: Baz_Questioning
+---
+  Baz: Well go on, Detective. What've you got?
+  ->You lied about Sia hating Richter!
+    Saul: You lied about Sia hating Richter, doesn't that seem suspicious to you?
+    Baz: That's nothing. What else have you got?
+    Richter: This is it, Saul! Present the final piece of evidence!
+    Baz: I'm waiting, Detective.
+    ->The dinner table has your fingerprints! <<once>>
+      Saul: The dinner table has your fingerprints on it!
+      Baz: I'm not sure what that has to do with anything.
+      <<jump Baz_Incorrect>>
+    ->You're the killer because I say so! <<once>>
+      Saul: I know you're the killer because it just makes sense!
+      Baz: For real?
+      <<jump Baz_Incorrect>>
+    ->I found a receipt with your name on it!
+      Saul: I found a receipt for a non-descript murder weapon with your name on it!
+      Baz: Impossible! I must have put it in the bin by accident!
+      Saul: So you confess your crime?
+      Baz: Alright it was me!
+      Baz: I did it because I hated him!
+      Baz: He kept screwing me over on the rota! I got no weekends!
+      Saul: That's fair.
+      Richter: Hey!
+      Saul: I mean you will pay for your crimes!
+  ->You seemed shady from the beginning! <<once>>
+    Saul: You seemed shady from the beginning! It makes perfect sense for you to be the killer!
+    Baz: How flattering.
+    <<jump Baz_Incorrect>>
+  ->Sia doesn't seem the type to kill someone! <<once>>
+    Saul: Sia doesn't give the impression of a killer, so by process of elimination that leaves you to be the culprit!
+    Baz: Well that's rude.
+    <<jump Baz_Incorrect>>
+===
+
+title: Baz_Incorrect
+---
+Baz: Seriously? That's all you're going off?
+Baz: Some detective you are.
+Richter: Come on, Saul. Focus! Remember everything you've learned about this case!
+<<jump Baz_Questioning>>
 ===

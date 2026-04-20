@@ -1,0 +1,23 @@
+title: Bin_Search
+---
+Saul: (This is a bin.)
+Saul: (There's stuff in it, I guess.)
+<<if $Weapon_search == 1>>
+<<jump Bin_Found>>
+<<endif>>
+===
+
+title: Bin_Found
+---
+Saul: (Wait...)
+Saul: (What's this?)
+Saul: (Let's see here...)
+Saul: (It's a receipt...)
+Saul: (It's for the purchase of an item called "Non-descript Murder Weapon"!)
+Saul: (It seems the buyer also paid extra to have a personalised engraving...)
+Saul: (And it reads "Property of Baz Zooka"!)
+<<set $Weapon_search = $Weapon_search + 1>>
+<color="yellow">Baz clue added.
+Saul: Seems we've found our perp.
+Richter: Now all that's left to do is confront my killer.
+===
