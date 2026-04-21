@@ -119,8 +119,8 @@ Baz: Well, go on, Detective.
   Saul: I know you're the killer because it just makes sense!
   Baz: For real?
   <<jump Baz_Incorrect>>
-->I found a receipt with your name on it!
-  Saul: I found a receipt for a non-descript murder weapon with your name on it!
+->I found a receipt with your initials on it!
+  Saul: I found a receipt for a non-descript murder weapon with your initials on it!
   Baz: Impossible! I must have put it in the bin by accident!
   Saul: So you confess your crime?
   Baz: Alright it was me!
@@ -128,7 +128,16 @@ Baz: Well, go on, Detective.
   Baz: He kept screwing me over on the rota! I got no weekends!
   Saul: That's fair.
   Richter: Hey!
-  Saul: I mean you will pay for your crimes!
+  Saul: I mean...
+  Saul: You will pay for your crimes!
+  <<set $Clue_total = 0>>
+  <<set $Sia_clue = 0>>
+  <<set $Baz_clue = 0>>
+  <<set $Door_counter = 0>>
+  <<set $Weapon_search = 0>>
+  <<set $Question_correct = 0>>
+  <<set $Body_where = 0>>
+  <<end_game GameManager>>
 ===
 
 title: Baz_Incorrect
