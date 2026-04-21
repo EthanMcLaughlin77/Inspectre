@@ -26,6 +26,18 @@ title: Richter_Investigation
   Saul: ...
   Richter: Don't you have some investigating to do?
   <<jump Richter_Investigation>>
+->Where is your body? <<if $Body_where == 1>>
+  Saul: Can I ask you something?
+  Richter: Shoot.
+  Saul: Where is your body?
+  Richter: What?
+  Saul: Like, your corpse.
+  Saul: Shouldn't it be here?
+  Richter: Dunno.
+  Saul: ...
+  Saul: Whatever.
+  <<set $Body_where = $Body_where + 1>>
+  <<jump Richter_Investigation>>
 ->What do I do? (Hint)
   Saul: I'm not sure where to go from here...
   Richter: Hmm...

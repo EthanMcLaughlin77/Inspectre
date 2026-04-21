@@ -21,7 +21,7 @@ Saul: I have stuff to do.
 
 title: Door_Crashout
 ---
-Saul: Hey can you stop interacting with the fucking door.
+Saul: Hey can you stop interacting with the damn door.
 <<set $Door_counter = $Door_counter + 1>>
 ===
 

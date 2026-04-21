@@ -14,6 +14,9 @@ Sia: You need something?
 
 title: Sia_NeedSomething
 ---
+<<if $Weapon_search == 2>>
+<<jump Sia_Accusation>>
+<<endif>>
 ->What did you think of my father? <<once>>
   Saul: What did you think of my father?
   Sia: He was a great man, I really liked him.
@@ -49,7 +52,46 @@ title: Sia_NeedSomething
   <<set $Clue_total = $Clue_total + 1>>
   Sia: You need anything else?
   <<jump Sia_NeedSomething>>
+->Any evidence? <<if $Weapon_search == 1>>
+  <<jump Sia_Evidence>>
 ->Just saying hello.
   Saul: See you later.
   Sia: Ok! See you!
+===
+
+title: Sia_Evidence
+---
+Saul: I'm kinda running out of leads for my investigation, and I was wondering if you could help?
+<<once>>
+Sia: Of course! How could I help?
+Saul: I feel like I've got as much information as I could, but I don't have any physical evidence.
+Sia: Hmm...
+Sia: I'm not totally sure what you could be looking for.
+<<endonce>>
+Sia: You could always check that bin over there. Could be somethin' in it.
+Saul: Could be worth a try, thanks Sia.
+<<once>>
+Sia: No prob! :D
+Saul: (I can't believe this case is reducing me to a dumpster diver...)
+<<endonce>>
+===
+
+title: Sia_Accusation
+---
+-><color="yellow">You're the killer!
+  Saul: Sia Nyde! I believe you killed my father!
+  <<once>>
+  Sia: WHAT?!
+  Saul: Nah I'm just pulling your leg, don't worry.
+  <<endonce>>
+  Sia: That's not even funny, man.
+  Saul: Sorry, my bad.
+  <<once>>
+  Saul: I get the poor taste in humour from my father.
+  Saul: I know Baz is the killer.
+  Sia: Holy buck!
+  Saul: Yeah, now all I gotta do is go confront him.
+  Sia: Good luck!
+  Saul: Thanks, Sia.
+  <<endonce>>
 ===

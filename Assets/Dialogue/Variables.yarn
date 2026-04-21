@@ -5,4 +5,6 @@ title: Variables
 <<declare $Baz_clue = 0 as number>>
 <<declare $Door_counter = 0 as number>>
 <<declare $Weapon_search = 0 as number>>
+<<declare $Question_correct = 0 as number>>
+<<declare $Body_where = 0 as number>>
 ===

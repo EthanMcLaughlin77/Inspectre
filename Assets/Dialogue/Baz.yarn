@@ -77,11 +77,12 @@ Saul: I'll be back.
 <<set $Baz_clue = $Baz_clue + 1>>
 <color="yellow">Baz clue added.
 <<set $Weapon_search = $Weapon_search + 1>>
+<<set $Body_where = $Body_where + 1>>
 ===
 
 title: Baz_Accusation
 ---
--><color="red">You're the killer!
+-><color="yellow">You're the killer!
   Saul: Baz Zooka! I believe you killed my father!
   Baz: That's some accusation, kid. What are you basing this off?
   Richter: This is it, Saul. Present your information as best you can!
@@ -95,25 +96,8 @@ title: Baz_Questioning
     Saul: You lied about Sia hating Richter, doesn't that seem suspicious to you?
     Baz: That's nothing. What else have you got?
     Richter: This is it, Saul! Present the final piece of evidence!
-    Baz: I'm waiting, Detective.
-    ->The dinner table has your fingerprints! <<once>>
-      Saul: The dinner table has your fingerprints on it!
-      Baz: I'm not sure what that has to do with anything.
-      <<jump Baz_Incorrect>>
-    ->You're the killer because I say so! <<once>>
-      Saul: I know you're the killer because it just makes sense!
-      Baz: For real?
-      <<jump Baz_Incorrect>>
-    ->I found a receipt with your name on it!
-      Saul: I found a receipt for a non-descript murder weapon with your name on it!
-      Baz: Impossible! I must have put it in the bin by accident!
-      Saul: So you confess your crime?
-      Baz: Alright it was me!
-      Baz: I did it because I hated him!
-      Baz: He kept screwing me over on the rota! I got no weekends!
-      Saul: That's fair.
-      Richter: Hey!
-      Saul: I mean you will pay for your crimes!
+    <<set $Question_correct = $Question_correct + 1>>
+    <<jump Baz_Questioning_Two>>
   ->You seemed shady from the beginning! <<once>>
     Saul: You seemed shady from the beginning! It makes perfect sense for you to be the killer!
     Baz: How flattering.
@@ -124,10 +108,37 @@ title: Baz_Questioning
     <<jump Baz_Incorrect>>
 ===
 
+title: Baz_Questioning_Two
+---
+Baz: Well, go on, Detective.
+->The dinner table has your fingerprints! <<once>>
+  Saul: The dinner table has your fingerprints on it!
+  Baz: I'm not sure what that has to do with anything.
+  <<jump Baz_Incorrect>>
+->You're the killer because I say so! <<once>>
+  Saul: I know you're the killer because it just makes sense!
+  Baz: For real?
+  <<jump Baz_Incorrect>>
+->I found a receipt with your name on it!
+  Saul: I found a receipt for a non-descript murder weapon with your name on it!
+  Baz: Impossible! I must have put it in the bin by accident!
+  Saul: So you confess your crime?
+  Baz: Alright it was me!
+  Baz: I did it because I hated him!
+  Baz: He kept screwing me over on the rota! I got no weekends!
+  Saul: That's fair.
+  Richter: Hey!
+  Saul: I mean you will pay for your crimes!
+===
+
 title: Baz_Incorrect
 ---
 Baz: Seriously? That's all you're going off?
 Baz: Some detective you are.
-Richter: Come on, Saul. Focus! Remember everything you've learned about this case!
+<<if $Question_correct == 0>>
 <<jump Baz_Questioning>>
+<<endif>>
+<<if $Question_correct == 1>>
+<<jump Baz_Questioning_Two>>
+<<endif>>
 ===
