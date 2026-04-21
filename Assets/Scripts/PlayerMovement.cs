@@ -64,7 +64,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleRotation()
     {
-        if (wasMovementDisabled) return;
         float mouseX = Input.GetAxis("Mouse X");
         rotationY += mouseX * mouseSensitivity;
 
