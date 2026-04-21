@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
         /*Camera.main.transform.rotation = Quaternion.Euler(0,0,0);
         transform.rotation = Quaternion.Euler(0,0,0);*/
 
-        player.transform.rotation = Camera.main.transform.rotation;
+        //player.transform.rotation = Camera.main.transform.rotation;
     }
     void Update()
     {
@@ -64,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleRotation()
     {
+        if (wasMovementDisabled) return;
         float mouseX = Input.GetAxis("Mouse X");
         rotationY += mouseX * mouseSensitivity;
 
