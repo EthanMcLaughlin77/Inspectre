@@ -51,6 +51,4 @@ title: Richter_Investigation
   <<jump Richter_Investigation>>
 ->Just saying hello.
   Saul: This mystery won't solve itself.
-->End.
-  <<end_game GameManager>>
 ===

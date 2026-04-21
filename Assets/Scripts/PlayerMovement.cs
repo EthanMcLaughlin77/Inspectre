@@ -25,6 +25,11 @@ public class PlayerMovement : MonoBehaviour
         {
             playerInput = player.GetComponent<PlayerInput>();
         }
+
+        /*Camera.main.transform.rotation = Quaternion.Euler(0,0,0);
+        transform.rotation = Quaternion.Euler(0,0,0);*/
+
+        player.transform.rotation = Camera.main.transform.rotation;
     }
     void Update()
     {
